@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Location extends CI_Controller {
 	function index(){
 		$this->load->model('location_model');
-		$data['countries'] = $this->Location_model->fetch_countries();
+		$data['countries'] = $this->location_model->fetch_countries();
 		$this->load->view('location',$data);
 	}
 	function get_states(){
