@@ -23,7 +23,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://msgroup.adikar.com/';
+// $config['base_url'] = 'https://msgroup.adikar.com/';
+if (! empty($_SERVER['HTTPS']))
+{
+    $config['base_url'] = 'https://msgroup.adikar.com/';
+}
+else
+{
+    $config['base_url'] = 'http://localhost:75/';
+}
 
 /*
 |--------------------------------------------------------------------------
