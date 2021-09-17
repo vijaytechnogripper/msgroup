@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Login';
-		$this->load->view('Login', $data);
+		$this->load->view('login', $data);
 	}
 	function login_validation(){
 		$this->load->library('form_validation');
