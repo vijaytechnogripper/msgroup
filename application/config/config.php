@@ -26,11 +26,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'https://msgroup.adikar.com/';
 if (! empty($_SERVER['HTTPS']))
 {
-    $config['base_url'] = 'https://msgroup.adikar.com/';
+    $config['base_url'] = 'http://localhost:75/';
 }
 else
 {
-    $config['base_url'] = 'http://localhost:75/';
+    $config['base_url'] = 'https://msgroup.adikar.com/';
 }
 
 /*
