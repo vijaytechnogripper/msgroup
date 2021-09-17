@@ -7,7 +7,7 @@ foreach ($user as $row) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MS Group -  <?php echo $title;?> </title>
-  <link rel="icon" href="<?php echo base_url();?>assets/assets/images/fav.png" type="image/gif">
+  <link rel="icon" href="<?php echo base_url();?>assets/images/fav.png" type="image/gif">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
