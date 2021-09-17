@@ -49,8 +49,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$this->set_directory( "public" );
-$route['default_controller'] = "home";
+// if ($this->uri->segment(1) == 'admin') {
+// 	$this->set_directory( "admin" );
+// } else {
+// 	$this->set_directory( "public" );
+// }
+$data = $this->uri->segment(1);
+if ( $data == 'about' OR $data == 'services' OR $data == 'services' OR $data =='projects' OR $data == 'products' OR $data == 'careers' OR $data == 'contact' OR $data == '') {
+	$this->set_directory( "public" );
+	$route['default_controller'] = "home";
+} else {
+	$this->set_directory( "admin" );
+}
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['about'] = 'home/about';
@@ -59,5 +71,3 @@ $route['projects'] = 'home/projects';
 $route['products'] = 'home/products';
 $route['careers'] = 'home/careers';
 $route['contact'] = 'home/contact';
-// $this->set_directory( "admin" );
-$route['login'] = 'login';
