@@ -1,9 +1,5 @@
 <?php
 class Location_model extends CI_Model{
-	public function __construct()
-	{
-		parent::__construct();
-	}
 	public function fetch_countries()
 	{
 		$query = $this->db->get_where('ci_countries');
