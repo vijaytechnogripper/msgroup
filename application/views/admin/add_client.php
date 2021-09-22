@@ -109,15 +109,15 @@
                   <div class="p-1 flex-fill" style="overflow: hidden">
                     <form method="POST" action="<?php echo base_url();?>Clients/insert_client">
                       <div class="card-body">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Client Name</label>
-                          <input type="text" class="form-control" id="client_name" name="client_name" value="<?php echo set_value('client_name') ;?>" placeholder="Enter Client's Name" >
-                          <span class="text-danger" for="country"><?php echo form_error("client_name"); ?></span>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Client's Comapany Name</label>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Comapany Name</label>
                           <input type="text" class="form-control" id="company" name="company" value="<?php echo set_value('company');?>" placeholder="Enter Client's Comapny Name">
                           <span class="text-danger" for="country"><?php echo form_error("company"); ?></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Contact Person Name</label>
+                          <input type="text" class="form-control" id="client_name" name="client_name" value="<?php echo set_value('client_name') ;?>" placeholder="Enter Client's Name" >
+                          <span class="text-danger" for="country"><?php echo form_error("client_name"); ?></span>
                         </div>
                         <div class="row">
                           <div class="form-group col-6">
@@ -131,7 +131,12 @@
                             <span class="text-danger" for="country"><?php echo form_error("c_email"); ?></span>
                           </div>
                         </div>
-                  
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Office Number</label>
+                            <input type="text" class="form-control" id="office_number" name="office_number" value="<?php echo set_value('office_number');?>" placeholder="Enter Client's Mobile Number">
+                            <span class="text-danger" for="office_number"><?php echo form_error("office_number"); ?></span>
+                            <p class="text-danger">*Do not add Country Code</p>
+                          </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Mobile Number</label>
                             <input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile');?>" placeholder="Enter Client's Mobile Number">
