@@ -195,6 +195,11 @@
                             <input type="text" class="form-control" id="pin_zip" name="pin_zip" value="<?php echo set_value('pin_zip');?>" placeholder="Enter PIN / Zip Code">
                             <span class="text-danger" for="country"><?php echo form_error("pin_zip"); ?></span>
                           </div>
+                          <div class="form-group col-6">
+                            <label for="exampleInputEmail1">Select Logo</label>
+                            <input type="file" class="form-control" id="logo" name="logo" value="<?php echo set_value('logo');?>">
+                            <span class="text-danger" for="logo"><?php echo form_error("logo"); ?></span>
+                          </div>
                         </div>
                       </div>
                       <!-- /.card-body -->
