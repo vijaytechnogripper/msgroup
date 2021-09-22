@@ -13,8 +13,8 @@ class Clients extends CI_Controller {
 			$data = array();
 			$data['user'] = $user;
 			$data['title'] = 'Add Client';
-			$this->load->model('Location_model');
-			$data['countries'] = $this->location_model->fetch_countries();
+			$this->load->model('country');
+			$data['countries'] = $this->country->fetch_countries();
 			$this->load->view('admin/include/sidebar',$data);
 			$this->load->view('admin/add_client');
 			$this->load->view('admin/include/footer');
