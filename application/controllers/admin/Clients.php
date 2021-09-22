@@ -105,8 +105,8 @@ class Clients extends CI_Controller {
 			$data = array();
 			$data['user'] = $user;
 			$data['title'] = 'View Client';
-			$this->load->model('Location_model');
-			$data['countries'] = $this->location_model->fetch_countries();
+			$this->load->model('country');
+			$data['countries'] = $this->country->fetch_countries();
 			$this->load->model('clients_model'); 
 		 	$data['h']=$this->clients_model->get_clients();
 			$this->load->view('admin/include/sidebar',$data);
