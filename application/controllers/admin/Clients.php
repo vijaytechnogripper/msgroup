@@ -29,8 +29,9 @@ class Clients extends CI_Controller {
 		$this->form_validation->set_rules("company", "Client's Comapany Name", 'required');
 		$this->form_validation->set_rules("email", "Client's Email Id", 'required|valid_email|is_unique[ci_clients.email]');
 		$this->form_validation->set_rules("c_email", "Confirm Email Id", 'required|matches[email]');
-		$this->form_validation->set_rules("mobile", "Mobile Nummber", 'required|min_length[10]|max_length[14]');
-		$this->form_validation->set_rules("whatsapp", " WhatsApp Nummber", 'required|min_length[10]|max_length[14]');
+		$this->form_validation->set_rules("office_number", "Office Number", 'required|min_length[10]|max_length[14]');
+		$this->form_validation->set_rules("mobile", "Mobile Number", 'required|min_length[10]|max_length[14]');
+		$this->form_validation->set_rules("whatsapp", " WhatsApp Number", 'required|min_length[10]|max_length[14]');
 		$this->form_validation->set_rules("address", "Address", 'required');
 		$this->form_validation->set_rules("country", "Country", 'required');
 		$this->form_validation->set_rules("state", "State", 'required');
@@ -78,6 +79,7 @@ class Clients extends CI_Controller {
 				'client_name' =>$this->input->post('client_name'),
 				'company' =>$this->input->post('company'),
 				'email' =>$this->input->post('email'),
+				'office_number' => "+".$phonecode.$this->input->post('office_number'),
 				'mobile' => "+".$phonecode.$this->input->post('mobile'),
 				'whatsapp' => "https://wa.me/".$phonecode.$this->input->post('whatsapp'),
 				'address' =>$this->input->post('address'),
@@ -85,6 +87,7 @@ class Clients extends CI_Controller {
 				'state' =>$pure_state_name, 
 				'country' =>$pure_country_name,
 				'pin_zip' =>$this->input->post('pin_zip'), 
+				'logo' =>$this->input->post('logo'), 
 				'created_at'=> date('d-m-Y H:i:s')
 				);
 				echo "<pre>";

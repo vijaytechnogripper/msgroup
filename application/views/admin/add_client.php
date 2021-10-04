@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Contact Person Name</label>
-                          <input type="text" class="form-control" id="client_name" name="client_name" value="<?php echo set_value('client_name') ;?>" placeholder="Enter Client's Name" >
+                          <input type="text" class="form-control" id="client_name" name="client_name" value="<?php echo set_value('client_name') ;?>" placeholder="Enter Contact Person Name" >
                           <span class="text-danger" for="country"><?php echo form_error("client_name"); ?></span>
                         </div>
                         <div class="row">
@@ -133,7 +133,7 @@
                         </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Office Number</label>
-                            <input type="text" class="form-control" id="office_number" name="office_number" value="<?php echo set_value('office_number');?>" placeholder="Enter Client's Mobile Number">
+                            <input type="text" class="form-control" id="office_number" name="office_number" value="<?php echo set_value('office_number');?>" placeholder="Enter Office Number">
                             <span class="text-danger" for="office_number"><?php echo form_error("office_number"); ?></span>
                             <p class="text-danger">*Do not add Country Code</p>
                           </div>

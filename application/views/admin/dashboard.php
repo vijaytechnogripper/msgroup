@@ -9,7 +9,7 @@ foreach ($user as $row) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"> Welcome <?php echo $row['firstname'] ?> <?php echo $row['lastname'] ?>, </h1>
+            <h1 class="m-0"> Welcome <?php echo $row['firstname'] ?> <?php echo $row['lastname'] ?> <?php echo $row['role'] ?>, </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
