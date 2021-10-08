@@ -129,7 +129,7 @@ class Clients extends CI_Controller {
                 {
                         $error = array('error' => $this->upload->display_errors());
 
-                        $this->load->view('test', $error);
+                        $this->add_client();
                 }
                 else
                 {
