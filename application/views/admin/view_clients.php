@@ -84,7 +84,7 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-
+        <span class="alert alert-success mx-auto"><?php echo $this->session->flashdata("success_msg");?></span>
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
@@ -110,8 +110,9 @@
                       <thead>
                       <tr>
                         <th>Client ID</th>
-                        <th>Name</th>
                         <th>Company</th>
+                        <th>Contact Name</th>
+                        <th>Logo</th>
                         <th>Email</th>
                         <th>Mobile</th>
                         <th>Quick Connect</th>
@@ -126,8 +127,9 @@
 
                       ?><tr>
                         <td><?php echo $row->client_id;?></td>
-                        <td><?php echo $row->client_name;?></td>
                         <td><?php echo $row->company;?></td>
+                        <td><?php echo $row->client_name;?></td>
+                        <td><img style="height: 50px; width:50px;" src="<?php echo base_url();?>assets/uploads/clients/<?php echo $row->logo;?>" alt="Logo Not Found"></td>
                         <td><?php echo $row->email;?></td>
                         <td><a target="new_blank" href="tel:<?php echo $row->mobile;?>"><?php echo $row->mobile;?></a></td>
                         <td align="center" style="word-spacing: 1em;"><label>

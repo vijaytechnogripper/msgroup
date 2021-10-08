@@ -107,7 +107,7 @@
               <div class="card-body p-0">
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
-                    <form method="POST" action="<?php echo base_url();?>Clients/insert_client">
+                    <form method="POST" enctype="multipart/form-data" action="<?php echo base_url();?>Clients/insert_client" >
                       <div class="card-body">
                       <div class="form-group">
                           <label for="exampleInputEmail1">Comapany Name</label>
@@ -143,13 +143,6 @@
                             <span class="text-danger" for="country"><?php echo form_error("mobile"); ?></span>
                             <p class="text-danger">*Do not add Country Code</p>
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Whatsapp Number </label>
-                            <p><input type="checkbox" id="same_num" name="same_num" onclick="myFunction()">Same As Mobile Number</p>
-                            <input type="text" class="form-control" id="whatsapp" name="whatsapp" value="<?php echo set_value('whatsapp');?>" placeholder="Enter Client's Whatsapp Number">
-                            <span class="text-danger" for="country"><?php echo form_error("whatsapp"); ?></span>
-                            <p class="text-danger">*Do not add Country Code</p>
-                          </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Address</label>
                           <input type="text" class="form-control" id="address" name="address" value="<?php echo set_value('address');?>" placeholder="Enter Client's Address">
@@ -160,8 +153,8 @@
                             <!-- select -->
                             <div class="form-group">
                               <label>Country</label>
-                              <select id="country" name="country" class="form-control">
-                                <option value="">Select Country</option>
+                              <select id="country" name="country" class="form-control" value="<?php echo set_value('country');?>">
+                                <option >Select Country</option>
                                 <?php foreach ($countries as $countries):?>
                                 <option value="<?php echo $countries->id; ?>"><?php echo $countries->name;?></option>
                                 <?php endforeach;?>
@@ -172,10 +165,10 @@
                           <div class="col-sm-6">
                             <div class="form-group">
                               <label for="state">State</label>
-                              <select id="state" name="state" disabled="" class="form-control">
-                                <option value="">Select State</option>
+                              <select id="state" name="state" disabled="" class="form-control" value="<?php echo set_value('state');?>">
+                                <option >Select State</option>
                               </select>
-                              <span class="text-danger" for="country"><?php echo form_error("state"); ?></span>
+                              <span class="text-danger" for="State"><?php echo form_error("state"); ?></span>
                             </div>
                           </div>
                         </div>
@@ -184,10 +177,10 @@
                             <!-- select -->
                             <div class="form-group">
                               <label for="city">City/District</label>
-                              <select id="city" name="city" disabled="" class="form-control">
-                                <option value="">Select City/District</option>
+                              <select id="city" name="city" disabled="" class="form-control" value="<?php echo set_value('city');?>">
+                                <option >Select City/District</option>
                               </select>
-                              <span class="text-danger" for="country"><?php echo form_error("city"); ?></span>
+                              <span class="text-danger" for="city"><?php echo form_error("city"); ?></span>
                             </div>
                           </div>
                            <div class="form-group col-6">
@@ -197,7 +190,10 @@
                           </div>
                           <div class="form-group col-6">
                             <label for="exampleInputEmail1">Select Logo</label>
-                            <input type="file" class="form-control" id="logo" name="logo" value="<?php echo set_value('logo');?>">
+                            <input type="hidden" name="5000" value="30000" />
+                            <input type="file" class="form-control" id="logo" name="logo" size="20" value="logo" required/>
+                            <!-- <input type="file" name="logo" size="20" /> -->
+
                             <span class="text-danger" for="logo"><?php echo form_error("logo"); ?></span>
                           </div>
                         </div>

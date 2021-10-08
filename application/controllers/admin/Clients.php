@@ -31,14 +31,15 @@ class Clients extends CI_Controller {
 		$this->form_validation->set_rules("c_email", "Confirm Email Id", 'required|matches[email]');
 		$this->form_validation->set_rules("office_number", "Office Number", 'required|min_length[10]|max_length[14]');
 		$this->form_validation->set_rules("mobile", "Mobile Number", 'required|min_length[10]|max_length[14]');
-		$this->form_validation->set_rules("whatsapp", " WhatsApp Number", 'required|min_length[10]|max_length[14]');
 		$this->form_validation->set_rules("address", "Address", 'required');
 		$this->form_validation->set_rules("country", "Country", 'required');
 		$this->form_validation->set_rules("state", "State", 'required');
 		$this->form_validation->set_rules("city", "City", 'required');
 		$this->form_validation->set_rules("pin_zip", "PIN / Zip Code", 'required|numeric|min_length[4]|max_length[10]');
+		$this->form_validation->set_rules('logo', 'Upload Logo', 'file_required');
 		if($this->form_validation->run())
 		{
+			
 			$state =$this->input->post('state');
 			$state_name = $this->db->query("SELECT name FROM ci_states WHERE id = '".$state."'");
 			if ($state_name->num_rows()>0) {
@@ -71,9 +72,26 @@ class Clients extends CI_Controller {
 			else{
 				echo "State Not found";
 			}
-			 
 			$rand = $this->input->post('mobile');
-	        $rand_num = "FLMCLI-".$rand;
+	            	$rand_num = "msgcl".$rand;
+	        	// Data upload logo
+	        	if(!empty($_FILES['logo']['name'])){
+	        		
+	        		$new_name 			= time().$_FILES['logo']['name'];
+	            		$config['file_name']		= str_replace(' ', '_', $new_name);
+	            		$config['upload_path']          = './assets/uploads/clients/';
+		                $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+		                $config['max_size']             = 5000;
+		                $config['max_width']            = 5000;
+		                $config['max_height']           = 5000;
+		                $this->load->library('upload', $config);
+		                $upload_data = $this->upload->data();
+		                $filename = $upload_data['file_name'];
+	        	}
+	        	else{
+	        		$filename='';
+	        	}
+			
 			$data = array(
 				'client_id'  => $rand_num,
 				'client_name' =>$this->input->post('client_name'),
@@ -81,24 +99,45 @@ class Clients extends CI_Controller {
 				'email' =>$this->input->post('email'),
 				'office_number' => "+".$phonecode.$this->input->post('office_number'),
 				'mobile' => "+".$phonecode.$this->input->post('mobile'),
-				'whatsapp' => "https://wa.me/".$phonecode.$this->input->post('whatsapp'),
 				'address' =>$this->input->post('address'),
 				'city' =>$pure_city_name, 
 				'state' =>$pure_state_name, 
 				'country' =>$pure_country_name,
 				'pin_zip' =>$this->input->post('pin_zip'), 
-				'logo' =>$this->input->post('logo'), 
+				'logo' => $filename,
 				'created_at'=> date('d-m-Y H:i:s')
 				);
-				echo "<pre>";
-				print_r($data);
-				$this->clients_model->add_client($data);
-				$this->session->set_flashdata('success_msg', 'Client Added Sucessfully');
+			$this->upload_client_logo();
+			$this->clients_model->add_client($data);
+			$this->session->set_flashdata('success_msg', 'Client Added Sucessfully');
 		}
 		else
 		{
 			$this->add_client();
 		}
+	}
+	private function upload_client_logo(){
+                $config['upload_path']          = './assets/uploads/clients/';
+                $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+                $config['max_size']             = 5000;
+                $config['max_width']            = 5000;
+                $config['max_height']           = 5000;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('logo'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('test', $error);
+                }
+                else
+                {
+
+                        
+                        $this->session->set_flashdata('success_msg', 'Client Added Sucessfully');
+                        $this->view_clients();
+                }
 	}
 	function view_clients(){
 		if ($this->session->userdata('username') != '') {
