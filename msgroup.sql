@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 16, 2021 at 02:18 PM
+-- Generation Time: Oct 09, 2021 at 04:54 PM
 -- Server version: 5.5.45
 -- PHP Version: 7.4.1
 
@@ -41,7 +41,8 @@ CREATE TABLE `achievements` (
 INSERT INTO `achievements` (`id`, `achievement_id`, `name`, `numbers`) VALUES
 (1, 'ACHI001', 'PROJECT\r\nSUCCESSFUL', '1,500'),
 (2, 'ACHI002', 'PROFESSIONAL\r\nEXPERT', '100'),
-(3, 'ACHI003', 'HAPPY\r\nCUSTOMERS', '300');
+(3, 'ACHI003', 'HAPPY\r\nCUSTOMERS', '300'),
+(4, 'test', 'test', '1000');
 
 -- --------------------------------------------------------
 
@@ -48094,6 +48095,7 @@ CREATE TABLE `ci_clients` (
   `company` varchar(100) NOT NULL,
   `photo` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `office_number` varchar(20) NOT NULL,
   `mobile` varchar(20) NOT NULL,
   `whatsapp` varchar(50) NOT NULL,
   `address` varchar(500) NOT NULL,
@@ -48101,19 +48103,12 @@ CREATE TABLE `ci_clients` (
   `state` varchar(50) NOT NULL,
   `city` varchar(100) NOT NULL,
   `pin_zip` varchar(10) NOT NULL,
+  `logo` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
   `modified_at` datetime NOT NULL,
   `is_active` tinyint(5) NOT NULL DEFAULT '1',
   `is_verify` tinyint(5) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `ci_clients`
---
-
-INSERT INTO `ci_clients` (`id`, `client_id`, `client_name`, `company`, `photo`, `email`, `mobile`, `whatsapp`, `address`, `country`, `state`, `city`, `pin_zip`, `created_at`, `modified_at`, `is_active`, `is_verify`) VALUES
-(1, '0', 'Vijay Nimje', 'Adikar Infomatrix Private Limited', '', 'vjnimje@yahoo.com', '+919325503531', 'https://wa.me/919325503531', '407 Ocean Park Plot no. 07, Sector 23, Ulve', 'India', 'Maharashtra', '0', '401206', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1),
-(2, 'FLMCLI-9325503531', 'Vijay Nimje', 'Adikar Infomatrix Private Limited', '', 'vjnimje@outlook.com', '+919325503531', 'https://wa.me/919325503531', '407 Ocean Park Plot no. 07, Sector 23, Ulve', 'India', 'Maharashtra', 'Navi Mumbai', '401206', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -52585,7 +52580,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -52603,7 +52598,7 @@ ALTER TABLE `ci_cities`
 -- AUTO_INCREMENT for table `ci_clients`
 --
 ALTER TABLE `ci_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ci_countries`
