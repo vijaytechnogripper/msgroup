@@ -116,7 +116,7 @@
                         <th>Email</th>
                         <th>Mobile</th>
                         <th>Quick Connect</th>
-                        <th>Status</th>
+                       <!--  <th>Status</th> -->
                         <th>CRUD</th>
                       </tr>
                       </thead>
@@ -143,11 +143,11 @@
                             <i class="fas fa-envelope text-success"></i>
                           </a></label>
                         </td>
-                        <td>Active</td>
+                        <!-- <td>Active</td> -->
                         <td align="center" style="word-spacing: 1em;">
                           <i class="fas fa-eye text-success"></i>
                           <i class="fas fa-edit text-info"></i>
-                          <i class="fas fa-trash text-danger"></i>
+                          <a href="#"><i class="fas fa-trash text-danger"></i></a>
                         </td>
                       </tr>
                        <?php }  
@@ -162,7 +162,7 @@
                         <th>Email</th>
                         <th>Mobile</th>
                         <th>Quick Connect</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                         <th>CRUD</th>
                       </tr>
                       </tfoot>
