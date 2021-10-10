@@ -28,8 +28,8 @@ class Location extends CI_Controller {
 	public function get_district()
 	{
 		$state_id = $this->input->post('id');
-		$this->load->model('location_model');
-		$city = $this->location_model->fetch_cities($state_id);
+		$this->load->model('country');
+		$city = $this->country->fetch_cities($state_id);
 		if (count($city)>0) {
 
 			$pro_select_box .= '';
