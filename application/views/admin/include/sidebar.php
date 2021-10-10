@@ -113,15 +113,21 @@ foreach ($user as $row) {
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url()?>Clients/add_client" class="nav-link">
+                <a href="<?php echo base_url()?>Products/add_categories" class="nav-link">
                   <i class="fas fa-user-plus nav-icon text-success"></i>
-                  <p>Add Clients</p>
+                  <p>Add Categories</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo base_url()?>Clients/view_clients" class="nav-link">
                   <i class="fas fa-users nav-icon text-success"></i>
-                  <p>View Clients</p>
+                  <p>Add Products</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>Clients/view_clients" class="nav-link">
+                  <i class="fas fa-users nav-icon text-success"></i>
+                  <p>View Products</p>
                 </a>
               </li>
             </ul>

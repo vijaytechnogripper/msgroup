@@ -24,7 +24,7 @@ class Clients extends CI_Controller {
 	}
 	function insert_client(){
 		$this->load->model('clients_model');
-        $this->load->library('form_validation');
+        	$this->load->library('form_validation');
 		$this->form_validation->set_rules("client_name", "Client's Name", 'required');
 		$this->form_validation->set_rules("company", "Client's Comapany Name", 'required');
 		$this->form_validation->set_rules("email", "Client's Email Id", 'required|valid_email|is_unique[ci_clients.email]');
