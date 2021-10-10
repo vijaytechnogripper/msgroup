@@ -134,10 +134,10 @@
                         <td><a target="new_blank" href="tel:<?php echo $row->mobile;?>"><?php echo $row->mobile;?></a></td>
                         <td align="center" style="word-spacing: 1em;"><label>
                           <a target="new_blank" href="tel:<?php echo $row->mobile;?>">
-                            <i class="fas fa-phone-alt text-success"> </i>
+                            <i class="fas fa-mobile-alt text-success"> </i>
                           </a>
-                          <a target="new_blank" href="<?php echo $row->whatsapp;?>">
-                            <i class="fab fa-whatsapp text-success"> </i>
+                          <a target="new_blank" href="tel:<?php echo $row->office_number;?>">
+                            <i class="fas fa-phone-alt text-success"> </i>
                           </a>
                           <a target="new_blank" href="mailto:<?php echo $row->email;?>">
                             <i class="fas fa-envelope text-success"></i>
@@ -156,8 +156,9 @@
                       <tfoot>
                       <tr>
                         <th>Client ID</th>
-                        <th>Name</th>
                         <th>Company</th>
+                        <th>Contact Name</th>
+                        <th>Logo</th>
                         <th>Email</th>
                         <th>Mobile</th>
                         <th>Quick Connect</th>
