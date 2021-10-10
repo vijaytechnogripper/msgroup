@@ -9,8 +9,8 @@ class Location extends CI_Controller {
 	}
 	function get_states(){
 		$country_id = $this->input->post('id');
-		$this->load->model('location_model');
-		$state = $this->location_model->fetch_states($country_id);
+		$this->load->model('country');
+		$state = $this->country->fetch_states($country_id);
 		if (count($state)>0) {
 
 			$pro_select_box .= '';
