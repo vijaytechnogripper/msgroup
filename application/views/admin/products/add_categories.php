@@ -88,7 +88,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-8">
+          <div class="col-md-6">
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
@@ -107,35 +107,23 @@
               <div class="card-body p-0">
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
-                    <form method="POST" enctype="multipart/form-data" action="<?php echo base_url();?>Clients/insert_client" >
+                    <form method="POST" action="<?php echo base_url();?>Products/insert_categories" >
                       <div class="card-body">
                       	<div class="form-group">
                           <label for="exampleInputEmail1">Category Name</label>
-                          <input type="text" class="form-control" id="company" name="company" value="<?php echo set_value('company');?>" placeholder="Enter Category Name">
-                          <span class="text-danger" for="country"><?php echo form_error("company"); ?></span>
+                          <input type="text" class="form-control" id="category" name="category" value="<?php echo set_value('category');?>" placeholder="Enter Category Name">
+                          <span class="text-danger" for="category"><?php echo form_error("category"); ?></span>
                         </div>
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <!-- select -->
-                            <div class="form-group">
-                              <label>Parent Category</label>
-                              <select id="country" name="country" class="form-control" value="<?php echo set_value('country');?>">
-                                <option >Select Parent Category</option>
+                        <div class="form-group">
+                          <label>Parent Category</label>
+                            <select id="parent_category" name="parent_category" class="form-control" value="<?php echo set_select('parent_category');?>">
+                                <option value="">Select Parent Category</option>
+                                <option value="none">None</option>
                                 <?php foreach ($countries as $countries):?>
                                 <option value="<?php echo $countries->id; ?>"><?php echo $countries->name;?></option>
                                 <?php endforeach;?>
-                              </select>
-                              <span class="text-danger" for="country"><?php echo form_error("country"); ?></span>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                            	
-                              	<label for="state">State</label>
-          						<input  class="form-control" type="checkbox" name="is_parent_category">
-                              	<span class="text-danger" for="State"><?php echo form_error("state"); ?></span>
-                            </div>
-                          </div>
+                            </select>
+                            <span class="text-danger" for="country"><?php echo form_error("country"); ?></span>
                         </div>
                       </div>
                       <!-- /.card-body -->
@@ -153,48 +141,35 @@
           </div>
           <!-- /.col -->
 
-          <div class="col-md-4">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Categories</h3>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Inventory</span>
-                <span class="info-box-number">5,200</span>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
               </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="far fa-heart"></i></span>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="d-md-flex">
+                  <div class="p-1 flex-fill" style="overflow: hidden">
+                      <div class="card-body">
 
-              <div class="info-box-content">
-                <span class="info-box-text">Mentions</span>
-                <span class="info-box-number">92,050</span>
+                        <p>test text</p>
+                      </div>
+                      <!-- /.card-body -->
+                  </div>
+                </div><!-- /.d-md-flex -->
               </div>
-              <!-- /.info-box-content -->
+              <!-- /.card-body -->
             </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Downloads</span>
-                <span class="info-box-number">114,381</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-info">
-              <span class="info-box-icon"><i class="far fa-comment"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Direct Messages</span>
-                <span class="info-box-number">163,921</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
           </div>
           <!-- /.col -->
         </div>

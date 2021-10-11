@@ -22,4 +22,29 @@ class Products extends CI_Controller {
 			redirect('login');
 		}
 	}
+	function insert_categories(){
+		$this->load->model('products_model');
+        $this->load->library('form_validation');
+        if ($this->input->post('parent_category') == '' OR $this->input->post('parent_category') == 'none') {
+        	$this->form_validation->set_rules("category", "Category Name", 'required');
+        	if ($this->form_validation->run()) {
+        		echo $this->input->post('category');
+        		echo " is parent Category";
+        	} else {
+        		$this->add_categories();
+        	}
+        	
+
+        } else {
+        	$this->form_validation->set_rules("category", "Category Name", 'required');
+        	$this->form_validation->set_rules("category", "Category Name", 'required');
+        	if ($this->form_validation->run()) {
+        		echo $this->input->post('category');
+        		echo " is not Parent Category";
+        	} else {
+        		$this->add_categories();
+        	}
+        }
+        
+	}
 }
