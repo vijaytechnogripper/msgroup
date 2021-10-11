@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -129,7 +129,7 @@
                                 <option value="">Select Parent Category</option>
                                 <option value="none">None</option>
                                 <?php foreach ($category as $category):?>
-                                <option value="<?php echo $category->id; ?>"><?php echo $category->parent_name;?></option>
+                                <option value="<?php echo $category->parent_name; ?>"><?php echo $category->parent_name;?></option>
                                 <?php endforeach;?>
                             </select>
                             <span class="text-danger" for="country"><?php echo form_error("country"); ?></span>
@@ -149,7 +149,6 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
-
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
@@ -178,11 +177,11 @@
                           </thead>
                           <tbody>
                           <?php
-                           foreach ($categories->result() as $row)  
+                           foreach ($sub_category->result() as $row)  
                            {  
                           ?><tr>
-                            <td><?php echo $row->parent_name;?></td>
-                            <td></td>
+                            <td><?php echo $row->parent_category;?></td>
+                            <td><?php echo $row->category;?></td>
                           </tr>
                            <?php }  
                             ?>  
@@ -190,7 +189,7 @@
                           <tfoot>
                           <tr>
                             <th>Parent Category</th>
-                            <th>Category</th>
+                            <th>Category</th>     
                           </tr>
                           </tfoot>
                         </table>
@@ -199,6 +198,7 @@
                   </div>
                 </div><!-- /.d-md-flex -->
               </div>
+              
               <!-- /.card-body -->
             </div>
 
@@ -216,4 +216,4 @@
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
-  <!-- /.control-sidebar -->
+  <!-- /.control-sidebar

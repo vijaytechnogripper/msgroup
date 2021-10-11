@@ -15,6 +15,7 @@ class Products extends CI_Controller {
 			$data['user'] = $user;
 			$data['categories'] = $this->products_model->get_parent_categories();
 			$data['category'] = $this->products_model->fetch_parent_categories();
+			$data['sub_category'] = $this->products_model->get_categories();
 			$data['title'] = 'Add Categories';
 			$this->load->model('country');
 			$data['countries'] = $this->country->fetch_countries();
