@@ -29,7 +29,7 @@ class Products extends CI_Controller {
 		$this->load->model('products_model');
         $this->load->library('form_validation');
         if ($this->input->post('parent_category') == '' OR $this->input->post('parent_category') == 'none') {
-        	$this->form_validation->set_rules("category", "Category Name", 'required');
+        	$this->form_validation->set_rules("category", "Category Name", 'required|is_unique[msg_parent_categories.parent_name]');
         	if ($this->form_validation->run()) {
         		// echo $this->input->post('category');
         		// echo " is parent Category";
