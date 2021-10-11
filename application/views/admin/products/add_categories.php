@@ -84,6 +84,15 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <?php 
+          if ($this->session->flashdata('success_msg')) { ?>
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-check"></i> Success!</h5>
+              <?php echo $this->session->flashdata("success_msg");?>
+            </div>
+          <?php }
+        ?>
 
         <!-- Main row -->
         <div class="row">
@@ -119,8 +128,8 @@
                             <select id="parent_category" name="parent_category" class="form-control" value="<?php echo set_select('parent_category');?>">
                                 <option value="">Select Parent Category</option>
                                 <option value="none">None</option>
-                                <?php foreach ($countries as $countries):?>
-                                <option value="<?php echo $countries->id; ?>"><?php echo $countries->name;?></option>
+                                <?php foreach ($category as $category):?>
+                                <option value="<?php echo $category->id; ?>"><?php echo $category->parent_name;?></option>
                                 <?php endforeach;?>
                             </select>
                             <span class="text-danger" for="country"><?php echo form_error("country"); ?></span>
@@ -160,8 +169,31 @@
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
                       <div class="card-body">
-
-                        <p>test text</p>
+                        <table id="example2" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>Parent Category</th>
+                            <th>Category</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <?php
+                           foreach ($categories->result() as $row)  
+                           {  
+                          ?><tr>
+                            <td><?php echo $row->parent_name;?></td>
+                            <td></td>
+                          </tr>
+                           <?php }  
+                            ?>  
+                          </tbody>
+                          <tfoot>
+                          <tr>
+                            <th>Parent Category</th>
+                            <th>Category</th>
+                          </tr>
+                          </tfoot>
+                        </table>
                       </div>
                       <!-- /.card-body -->
                   </div>
