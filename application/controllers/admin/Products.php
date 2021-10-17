@@ -47,7 +47,7 @@ class Products extends CI_Controller {
         	
 
         } else {
-        	$this->form_validation->set_rules("category", "Category Name", 'required');
+        	$this->form_validation->set_rules("category", "Category Name", 'required|is_unique[msg_categories.category.parent_category]');
         	$this->form_validation->set_rules("category", "Category Name", 'required');
         	if ($this->form_validation->run()) {
         		// echo $this->input->post('category');
