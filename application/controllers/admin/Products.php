@@ -65,4 +65,24 @@ class Products extends CI_Controller {
         }
         
 	}
+	function add_products(){
+		if ($this->session->userdata('username') != '') {
+			$username = $this->session->userdata('username');
+			$this->load->model('profile_model');
+			$this->load->model('products_model');
+			$user = $this->profile_model->get_profile($username);
+			$data = array();
+			$data['user'] = $user;
+			$data['categories'] = $this->products_model->get_parent_categories();
+			$data['category'] = $this->products_model->fetch_parent_categories();
+			$data['sub_category'] = $this->products_model->get_categories();
+			$data['title'] = 'Add Products';
+			$this->load->view('admin/include/sidebar',$data);
+			$this->load->view('admin/products/add_products');
+			$this->load->view('admin/include/footer');
+		} else {
+			redirect('login');
+		}
+
+	}
 }

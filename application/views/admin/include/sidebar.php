@@ -119,7 +119,7 @@ foreach ($user as $row) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url()?>Clients/view_clients" class="nav-link">
+                <a href="<?php echo base_url()?>Products/add_products" class="nav-link">
                   <i class="fas fa-users nav-icon text-success"></i>
                   <p>Add Products</p>
                 </a>
