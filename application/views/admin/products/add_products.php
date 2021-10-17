@@ -121,7 +121,7 @@ Content Wrapper. Contains page content -->
                         <div class="col-md-6">
                           <div class="card-body">
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Product Name</label>
+                              <label for="product_name">Product Name</label>
                               <input type="text" class="form-control" id="product_name" name="product_name" value="<?php echo set_value('product_name');?>" placeholder="Enter Product Name">
                               <span class="text-danger" for="product_name"><?php echo form_error("product_name"); ?></span>
                             </div>
@@ -143,6 +143,16 @@ Content Wrapper. Contains page content -->
                                     <
                                 </select>
                                 <span class="text-danger" for="category"><?php echo form_error("category"); ?></span>
+                            </div>
+                            <div class="form-group">
+                              <label for="internal_diameter">Internal Diameter of Pipes (MM)</label>
+                              <input type="text" class="form-control" id="internal_diameter" name="internal_diameter" value="<?php echo set_value('internal_diameter');?>" placeholder="Enter Internal Diameter of Pipes">
+                              <span class="text-danger" for="internal_diameter"><?php echo form_error("internal_diameter"); ?></span>
+                            </div>
+                            <div class="form-group">
+                              <label for="">Barrel Wall Thickness (MM)</label>
+                              <input type="text" class="form-control" id="barrel_wall_thikness" name="barrel_wall_thikness" value="<?php echo set_value('barrel_wall_thikness');?>" placeholder="Barrel Wall Thickness">
+                              <span class="text-danger" for="barrel_wall_thikness"><?php echo form_error("barrel_wall_thikness"); ?></span>
                             </div>
                           </div>
                         </div>
