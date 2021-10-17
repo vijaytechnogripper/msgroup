@@ -154,6 +154,21 @@ Content Wrapper. Contains page content -->
                               <input type="text" class="form-control" id="barrel_wall_thikness" name="barrel_wall_thikness" value="<?php echo set_value('barrel_wall_thikness');?>" placeholder="Barrel Wall Thickness">
                               <span class="text-danger" for="barrel_wall_thikness"><?php echo form_error("barrel_wall_thikness"); ?></span>
                             </div>
+                            <div class="form-group">
+                              <label for="pipe_size">Pipe Size</label>
+                              <input type="text" class="form-control" id="pipe_size" name="pipe_size" value="<?php echo set_value('pipe_size');?>" placeholder="Pipe Size">
+                              <span class="text-danger" for="pipe_size"><?php echo form_error("pipe_size"); ?></span>
+                            </div>
+                            <div class="form-group">
+                              <label for="pipe_shape">Pipe Shape</label>
+                              <input type="text" class="form-control" id="pipe_shape" name="pipe_shape" value="<?php echo set_value('pipe_shape');?>" placeholder="Pipe Shape">
+                              <span class="text-danger" for="pipe_shape"><?php echo form_error("pipe_shape"); ?></span>
+                            </div>
+                            <div class="form-group">
+                              <label for="pipe_type">Pipe Type</label>
+                              <input type="text" class="form-control" id="pipe_type" name="pipe_type" value="<?php echo set_value('pipe_type');?>" placeholder="Pipe Type">
+                              <span class="text-danger" for="pipe_type"><?php echo form_error("pipe_type"); ?></span>
+                            </div>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -166,12 +181,19 @@ Content Wrapper. Contains page content -->
                                 </div>
                               </div>
                               <div class="col-md-6">
-                                <img style="max-width: 300px; height:auto;" id="output_image"/>
+                                <div class="form-group">
+                                  <img style="max-width: 300px; height:auto;" id="output_image"/>
+                                </div>
                               </div>
                             </div>
-
+                            <div class="form-group">
+                              <label for="pipe_description">Pipe Description</label>
+                              <textarea class="form-control" rows="10" id="pipe_description" name="pipe_description" value="<?php echo set_value('pipe_description');?>" placeholder="Enter Pipe Description"></textarea>
+                              <span class="text-danger" for="pipe_description"><?php echo form_error("pipe_description"); ?></span>
+                            </div> 
                           </div>
                         </div>
+
                       </div>
 
                       <div class="card-body">
