@@ -96,9 +96,15 @@ foreach ($user as $row) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url()?>Clients/view_clients" class="nav-link">
+                <a href="<?php echo base_url()?>cms/team" class="nav-link">
                   <i class="fas fa-users nav-icon text-success"></i>
                   <p>Team</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>cms/contact_info" class="nav-link">
+                  <i class="fas fa-users nav-icon text-success"></i>
+                  <p>Contact Info</p>
                 </a>
               </li>
             </ul>

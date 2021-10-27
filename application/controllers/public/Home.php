@@ -23,11 +23,11 @@ class Home extends CI_Controller {
 		$this->load->view('public/services');
 		$this->load->view('public/include/footer');
 	}
-	public function projects()
+	public function process()
 	{
-		$data['title']="Projects";
+		$data['title']="Process";
 		$this->load->view('public/include/header',$data);
-		$this->load->view('public/projects');
+		$this->load->view('public/process');
 		$this->load->view('public/include/footer');
 	}
 	public function products()

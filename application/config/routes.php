@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $data = $this->uri->segment(1);
-if ( $data == 'about' OR $data == 'services' OR $data == 'services' OR $data =='projects' OR $data == 'products' OR $data == 'careers' OR $data == 'contact' OR $data == '' OR $data == 'home' ) {
+if ( $data == 'about' OR $data == 'services' OR $data == 'services' OR $data =='process' OR $data == 'products' OR $data == 'careers' OR $data == 'contact' OR $data == '' OR $data == 'home' ) {
 	$this->set_directory( "public" );
 	$route['default_controller'] = "home";
 } else {
@@ -61,7 +61,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['about'] = 'home/about';
 $route['services'] = 'home/services';
-$route['projects'] = 'home/projects';
+$route['process'] = 'home/process';
 $route['products'] = 'home/products';
 $route['careers'] = 'home/careers';
 $route['contact'] = 'home/contact';

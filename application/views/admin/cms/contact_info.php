@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Add Categories</h1>
+            <h1 class="m-0">Contact Info</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?php echo base_url();?>Dashboard">Home</a></li>
-              <li class="breadcrumb-item active">Add Categories</li>
+              <li class="breadcrumb-item active">Contact Info</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -90,7 +90,21 @@
               <h5><i class="icon fas fa-check"></i> Success!</h5>
               <?php echo $this->session->flashdata("success_msg");?>
             </div>
-          <?php }
+          <?php } 
+          elseif ($this->session->flashdata('error_msg')){ ?>
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-ban"></i> Error!</h5>
+              <?php echo $this->session->flashdata("error_msg");?>
+            </div>
+         <?php }
+         else { ?>
+            <div class="alert alert-info alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-info"></i> Welcome !</h5>
+              You can update Contact Info from here !
+            </div>
+         <?php }
         ?>
 
         <!-- Main row -->
@@ -100,7 +114,7 @@
             <!-- MAP & BOX PANE -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Add Categories</h3>
+                <h3 class="card-title">Update Contact Info</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -115,29 +129,28 @@
               <div class="card-body p-0">
                 <div class="d-md-flex">
                   <div class="p-1 flex-fill" style="overflow: hidden">
-                    <form method="POST" action="<?php echo base_url();?>Products/insert_categories" >
+                    <form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>cms/update_contact_info" >
                       <div class="card-body">
-                      	<div class="form-group">
-                          <label for="exampleInputEmail1">Category Name</label>
-                          <input type="text" class="form-control" id="category" name="category" value="<?php echo set_value('category');?>" placeholder="Enter Category Name">
-                          <span class="text-danger" for="category"><?php echo form_error("category"); ?></span>
-                        </div>
                         <div class="form-group">
-                          <label>Parent Category</label>
-                            <select id="parent_category" name="parent_category" class="form-control" value="<?php echo set_select('parent_category');?>">
-                                <option value="">Select Parent Category</option>
-                                <option value="none">None</option>
-                                <?php foreach ($category as $category):?>
-                                <option value="<?php echo $category->parent_name; ?>"><?php echo $category->parent_name;?></option>
+                          <label>Contact</label>
+                            <select id="c_id" name="c_id" class="form-control">
+                                <option value="">Select Contact</option>
+                                <?php foreach ($info->result() as $row):?>
+                                <option value="<?php echo $row->c_id;?>"><?php echo $row->contact;?></option>
                                 <?php endforeach;?>
                             </select>
-                            <span class="text-danger" for="country"><?php echo form_error("country"); ?></span>
+                            <span class="text-danger" for="c_id"><?php echo form_error("c_id"); ?></span>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Info</label>
+                          <input type="text" class="form-control" id="info" name="info" value="<?php echo set_value('info');?>" placeholder="Enter Category Name">
+                          <span class="text-danger" for="info"><?php echo form_error("info"); ?></span>
                         </div>
                       </div>
                       <!-- /.card-body -->
 
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                       </div>
                     </form>
                   </div>
@@ -151,7 +164,7 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Categories</h3>
+                <h3 class="card-title">Contact Info</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -170,25 +183,25 @@
                         <table id="example2" class="table table-bordered table-striped">
                           <thead>
                           <tr>
-                            <th>Parent Category</th>
-                            <th>Category</th>
+                            <th>Contact</th>
+                            <th>Info</th>
                           </tr>
                           </thead>
                           <tbody>
                           <?php
-                           foreach ($sub_category->result() as $row)  
+                           foreach ($info->result() as $row)  
                            {  
                           ?><tr>
-                            <td><?php echo $row->parent_category;?></td>
-                            <td><?php echo $row->category;?></td>
+                            <td><?php echo $row->contact;?></td>
+                            <td><?php echo $row->info;?></td>
                           </tr>
                            <?php }  
                             ?>  
                           </tbody>
                           <tfoot>
                           <tr>
-                            <th>Parent Category</th>
-                            <th>Category</th>     
+                            <th>Contact</th>
+                            <th>Info</th>     
                           </tr>
                           </tfoot>
                         </table>
