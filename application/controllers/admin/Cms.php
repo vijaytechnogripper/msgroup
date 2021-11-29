@@ -137,15 +137,13 @@ class Cms extends CI_Controller {
       $this->insert_teamimage($teamimage);
       $this->load->model('cms_model');
       $this->cms_model->insert_team($data);
-      // echo "<pre>";
-      // print_r($data);
       $this->session->set_flashdata('success_msg', 'Team Member added Successfully !');
-      // $this->team();
+      redirect('cms/team');
+
     } else {
       $this->session->set_flashdata('error_msg', validation_errors());
       $this->team();
-    }
-    
+    } 
   }
   private function insert_teamimage($teamimage){
     $config['file_name']            = $teamimage;

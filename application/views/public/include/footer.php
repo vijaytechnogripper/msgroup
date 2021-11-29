@@ -97,7 +97,7 @@
   <script src="<?php echo base_url();?>assets/public/js/bootstrap-datepicker.js"></script>
   <script src="<?php echo base_url();?>assets/public/js/jquery.timepicker.min.js"></script>
   <script src="<?php echo base_url();?>assets/public/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src=""></script>
   <script src="<?php echo base_url();?>assets/public/js/google-map.js"></script>
   <script src="<?php echo base_url();?>assets/public/js/main.js"></script>
     
