@@ -74,7 +74,7 @@
     			</div>
     			<div class="col-md-8 wrap-about py-5 ftco-animate">
 	          <div class="heading-section mb-5">
-	            <h2 class="mb-4">We Are Highly Recommendable Construction Firm</h2>
+	            <h2 class="mb-4">Vijay We Are Highly Recommendable Construction Firm</h2>
 	          </div>
 	          <div class="">
 							<p class="mb-5">Launched back in the early 2000s as one of the fastest-growing manufacturers of the RCC hume pipes we believe we are both leading and trusted suppliers of rich quality RCC hume pipes and other cement products best suited for road projects, railway projects, industrial infrastructures, civil constructions and agricultural applications spread over the states of Odisha, Chhattisgarh and Jharkhand.</p>
